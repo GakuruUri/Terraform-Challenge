@@ -1,1 +1,31 @@
 # Terraform-Challenge
+
+1. Installations
+-- https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+-- https://registry.terraform.io/providers/hashicorp/aws/latest
+-- https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+
+
+```
+tasks:
+  - name: terraform
+    init: |
+      sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+      curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+      sudo apt-get update && sudo apt-get install terraform
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
+vscode:
+  extensions:
+    - amazonwebservices.aws-toolkit-vscode
+    - hashicorp.terraform
+
+```
