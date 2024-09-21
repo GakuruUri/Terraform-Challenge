@@ -1,22 +1,3 @@
-# terraform {
-#   required_providers {
-#     aws = {
-#       source = "hashicorp/aws"
-#       version = "5.68.0"
-#     }
-#   }
-# }
-
-# provider "aws" {
-#   # Configuration options
-#   region = "us-east-1"
-# }
-
-# resource "aws_instance" "Ec2-test-instance" {
-#   ami           = "ami-0e86e20dae9224db8" # Amazon Linux 2023 AMI// us-east-1
-#   instance_type = "t2.micro"
-# }
-
 terraform {
   #############################################################
   ## AFTER RUNNING TERRAFORM APPLY (WITH LOCAL BACKEND)
@@ -75,3 +56,25 @@ resource "aws_dynamodb_table" "terraform_locks" {
     type = "S"
   }
 }
+
+
+
+# terraform {
+#   required_providers {
+#     aws = {
+#       source = "hashicorp/aws"
+#       version = "5.68.0"
+#     }
+#   }
+# }
+
+# provider "aws" {
+#   # Configuration options
+#   region = "us-east-1"
+# }
+
+# resource "aws_instance" "Ec2-test-instance" {
+#   ami           = "ami-0e86e20dae9224db8" # Amazon Linux 2023 AMI// us-east-1
+#   instance_type = "t2.micro"
+# }
+
